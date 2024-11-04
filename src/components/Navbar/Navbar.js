@@ -1,41 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../../images/features/logo.png'
 import '../../styles/Navbar.css';
 import UserIcon from './UserIcon';
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="container">
+        <Link to="/" className="logo" ><img src={Logo} alt="User"/></Link>
         <ul>
+        <li>
+            <Link to="/" className='navitem'>Trang chủ</Link>
+          </li>
           <li className="dropdown">
-            <Link to="#">Các tổ chức</Link>
+            <Link to="#" className='navitem'>Các tổ chức</Link>
             <div className="dropdown-content">
-              <Link to="/about">Giới thiệu</Link><br/>
-              <Link to="/featured-projects">Dự án nổi bật</Link><br/>
-              <Link to="/achievements">Thành tựu</Link>
+              <Link to="/about" className='navitem'>Giới thiệu</Link><br/>
+              <Link to="/featured-projects" className='navitem'>Dự án nổi bật</Link><br/>
+              <Link to="/achievements" className='navitem'>Thành tựu</Link>
             </div>
           </li>
           <li>
-            <Link to="/stats">Thống kê</Link>
+            <Link to="/stats" className='navitem'>Thống kê</Link>
           </li>
           <li className="dropdown">
-            <Link to="#">Quyên góp</Link>
+            <Link to="#" className='navitem'>Liên hệ</Link>
             <div className="dropdown-content">
-              <Link to="/donate/online">Trực tuyến</Link><br/>
-              <Link to="/donate/offline">Trực tiếp</Link>
+              <Link to="/faq" className='navitem'>Câu hỏi thường gặp</Link><br/>
+              <Link to="/support" className='navitem'>Hỗ trợ trực tuyến</Link>
             </div>
           </li>
-          <li className="dropdown">
-            <Link to="#">Liên hệ</Link>
-            <div className="dropdown-content">
-              <Link to="/faq">Câu hỏi thường gặp</Link><br/>
-              <Link to="/support">Hỗ trợ trực tuyến</Link>
-            </div>
+          <li className='donate'>
+            <Link to="/donate" className='navitem'>Quyên góp</Link>
           </li>
         </ul>
         <UserIcon className="avatar"/>
-      </div>
     </nav>
   );
 }

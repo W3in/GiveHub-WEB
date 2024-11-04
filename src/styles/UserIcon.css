@@ -14,5 +14,6 @@
   
   .user-icon:hover .icon {
     filter: brightness(0.8);
+    background-color: transparent;
   }
   
