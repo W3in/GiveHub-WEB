@@ -83,6 +83,7 @@
   color: white;
   background-color: #F44336;
   margin-left: auto;
+  border-radius: 10px;
 }
 
 .donate:hover{
