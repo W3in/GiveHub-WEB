@@ -10,7 +10,8 @@ import OfflineDonate from './Donate/OfflineDonate';
 import OtherDonate from './Donate/OtherDonate';
 import FAQ from './Contact/FAQ';
 import Support from './Contact/Support';
-import Login from './Login';
+import Login from './Authorization/Login';
+import Register from './Authorization/Register'
 
 export const routes = [
   { path: "/", element: <Home /> },
@@ -25,4 +26,5 @@ export const routes = [
   { path: "/faq", element: <FAQ /> },
   { path: "/support", element: <Support /> },
   { path: "/login", element: <Login /> },
+  { path: "/register", element: <Register /> },
 ];

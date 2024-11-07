@@ -1,0 +1,108 @@
+/* Slide container */
+.slide-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Khởi tạo ẩn */
+    transition: opacity 0.5s ease; /* Thêm hiệu ứng mượt mà */
+}
+
+/* Hình ảnh */
+.slide-image {
+    width: 100%;
+    height: auto;
+}
+
+
+
+.slick-prev {
+    left: 20px; /* Vị trí bên trái */
+    z-index: 1; /* Đảm bảo nút ở trên */
+    border-radius: 50%; /* Viền tròn */
+    padding: 10px;
+    font-size: 20px; /* Kích thước chữ */
+}
+
+.slick-next {
+    right: 40px; /* Vị trí bên phải */
+    z-index: 1; /* Đảm bảo nút ở trên */
+    border-radius: 50%; /* Viền tròn */
+    padding: 10px;
+    font-size: 20px; /* Kích thước chữ */
+}
+
+/* Slider content */
+/* Overlay chứa chữ */
+.overlay {
+    position: absolute;
+    width: 1280px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4); /* Màu nền mờ */
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0; /* Ẩn overlay ban đầu */
+    transition: opacity 0.5s ease; /* Thêm hiệu ứng xuất hiện */
+}
+
+/* Tiêu đề */
+.slide-title {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    background-color: #e91e63; /* Màu nền */
+    top: 25%;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* Tạo tam giác bên trái */
+.slide-title::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px; /* Khoảng cách từ đầu tam giác đến text */
+    transform: translateY(-50%);
+    border-top: 26px solid transparent;
+    border-bottom: 26px solid transparent;
+    border-right: 20px solid #e91e63; /* Cùng màu với nền */
+}
+
+/* Tạo tam giác bên phải */
+.slide-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    border-top: 26px solid transparent;
+    border-bottom: 26px solid transparent;
+    border-left: 20px solid #e91e63;
+}
+
+/* Nội dung văn bản */
+.slide-content {
+    font-size: 1.2em;
+    position: relative;
+    text-align: center;
+    top: 15%;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+/* Khi slide hiện tại, làm cho overlay xuất hiện */
+.slide-container.active {
+    opacity: 1;
+}
+
+.overlay.show {
+    opacity: 1; /* Overlay sẽ xuất hiện khi được áp dụng class "show" */
+}

@@ -14,6 +14,7 @@
 .icon {
   width: auto;
   height: 30px; /* Đặt height là 60px, không phải 60 */
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .user-icon:hover{
