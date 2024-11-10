@@ -1,18 +1,21 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
-import { routes } from './pages'; // Nhập routes từ index.js
+import Layout from './components/Layout'; // Import đúng cách nếu dùng default export
+import { routes } from './pages';
 
 function App() {
   return (
     <Router>
-      <Navbar />
       <Routes>
         {routes.map((route) => (
-          <Route key={route.path} path={route.path} element={route.element} />
+          <Route 
+            key={route.path} 
+            path={route.path} 
+            element={<Layout>{route.element}</Layout>} 
+          />
         ))}
-        <Route path="*" element={<Navigate to="/" />} /> {/* Chuyển hướng bất kỳ URL không xác định đến Home */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );

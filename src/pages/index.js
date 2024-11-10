@@ -12,6 +12,7 @@ import FAQ from './Contact/FAQ';
 import Support from './Contact/Support';
 import Login from './Authorization/Login';
 import Register from './Authorization/Register'
+import Term from './Term/Term'
 
 export const routes = [
   { path: "/", element: <Home /> },
@@ -27,4 +28,5 @@ export const routes = [
   { path: "/support", element: <Support /> },
   { path: "/login", element: <Login /> },
   { path: "/register", element: <Register /> },
+  { path: "/term", element: <Term /> },
 ];

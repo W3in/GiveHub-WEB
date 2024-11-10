@@ -1,0 +1,163 @@
+.page {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.page-title-container {
+    flex: 1;
+    flex-direction: column;
+    background-image: url(https://givenow.vn/wp-content/uploads/2022/07/project_cover_with_overlay.png);
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-title-image {
+    flex-direction: column;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.about-title {
+    font-size: 50px;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.about-text {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    width: 1220px;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.4;
+
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    gap: 10px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.grid-image {
+    height: 170px;
+    width: 170px;
+}
+
+.flex-image {
+    height: auto;
+    width: 300px;
+}
+
+.banner-image {
+    width: 1500px;
+}
+
+.donate-image {
+    float: right;
+    width: 200px;
+    height: auto;
+    padding-left: 50px;
+
+}
+
+.about-text-collab p {
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.about-text-donate p {
+    font-size: 16px;
+    text-align: left;
+}
+
+.contact-button {
+    background-color: #FF0000;
+    border-color: #FF0000;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    padding-inline: 20px;
+    font-weight: bolder;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.contact-button:hover{
+    box-shadow: 2px 2px 5px #4D4D4D;
+    background-color: #e82222;
+}
+
+
+/*utility class*/
+
+.bg-gray {
+    background-color: #F4F4F4;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.gray-text {
+    color: #4D4D4D;
+}
+
+.large-title-text {
+    font-size: 40px;
+}
+
+.medium-title-text {
+    font-size: 30px;
+}
+
+.mt-1 {
+    margin-top: 10px;
+}
+
+.mt-2 {
+    margin-top: 20px;
+}
+
+.mt-5 {
+    margin-top: 50px;
+}
+
+.mb-1 {
+    margin-bottom: 10px;
+}
+
+.mb-2 {
+    margin-bottom: 20px;
+}
+
+.mb-5 {
+    margin-bottom: 50px;
+}
+
+.pt-0 {
+    padding-top: 0;
+}
+
+.bold {
+    color:black;    
+    text-shadow: 1px 0 black;
+    font-weight:bold;
+}
