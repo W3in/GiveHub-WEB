@@ -55,7 +55,7 @@ function FAQ() {
       {/* Phần Accordion */}
       <div className="page-container bg-white">
         <h1 className="mt-0 mb-1 ml-3">FAQs</h1>
-        <div className="grid-container-faq">
+        <div className="container-faq">
           <div>
             <h2>Dành cho Người ủng hộ</h2>
             <AccordionItem title="Có nên ủng hộ trên GiveHub.vn không?">

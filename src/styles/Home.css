@@ -222,7 +222,6 @@
 .project-grid {
     display: flex;
     width: 80%;
-    justify-self: center;
     justify-content: center;
     align-items: center;
     gap: 50px;
@@ -323,7 +322,7 @@
     justify-content: space-between; 
     align-items: center;
     position: absolute;
-    top: 151%;
+    top: 900px;
     left: 7.5%;
 }
 
@@ -380,7 +379,6 @@
     display: block;
     width: 10%;
     text-align: center;
-    justify-self: center;
     box-shadow: 1px 1px 2px black;
     color: #e91e63;
 }
@@ -389,4 +387,11 @@
     box-shadow: 2px 2px 3px black;
     background-color: #fc6e6e;
     color: white;
+}
+
+.project{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

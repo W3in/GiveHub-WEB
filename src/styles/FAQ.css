@@ -12,11 +12,11 @@
     margin-bottom: 30px;
 }
 
-.grid-container-faq {
-    display: grid;
-    grid-template-columns: auto auto;
+.container-faq {
+    display: flex;
     gap: 30px;
     justify-self: center;
+    margin: 0 auto;
     width: 80%;
     margin-inline: 0; /* Loại bỏ lề hai bên */
 }
