@@ -3,6 +3,19 @@
     font-family: Arial, sans-serif;
 }
 
+.faq-title{
+    margin: 0;
+}
+
+.page-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 .faq-container {
     padding: 40px 40px;
     display: flex;
@@ -15,7 +28,6 @@
 .container-faq {
     display: flex;
     gap: 30px;
-    justify-self: center;
     margin: 0 auto;
     width: 80%;
     margin-inline: 0; /* Loại bỏ lề hai bên */
@@ -78,3 +90,4 @@ transform: rotate(90deg); /* Xoay mũi tên 90 độ */
 .accordion-content p{
     margin-left: 20px;
 }
+
