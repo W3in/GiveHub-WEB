@@ -242,12 +242,13 @@
 }
 
 .home-project-container {
+    padding-bottom: 20px;
     position: relative;
     border-radius: 10px;
     overflow: hidden;
     margin: 30px 10px ;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 400px;
+    height: fit-content;
     margin-bottom: 10px;
     transition: opacity 0.3s ease-in-out;
     background-color: white;
