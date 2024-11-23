@@ -10,6 +10,35 @@ function FeaturedProjects(onSwitchToFeatured) {
       const organization = org.find((orgItem) => orgItem.organization === organizationName);
       return organization ? organization.image : null;
   };
+
+  const removeVietnameseTones = (str) => {
+    return str
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/đ/g, "d")
+        .replace(/Đ/g, "D")
+        .replace(/\s+/g, "-")
+        .toLowerCase();
+    };
+
+    // Bảng màu cho từng tag
+    const tagColors = {
+        "giao-duc": "#6f00ff",
+        "moi-truong": "#2196f3",
+        "y-te": "#ff9800",
+        "thien-tai": "#f7282f",
+        "tre-em": "#0aa886",
+        "nguoi-gia-neo-don": "#5c4917",
+        "hoan-canh-kho-khan": "#e64207",
+
+    };
+
+    // Hàm lấy màu cho tag
+    const getTagColor = (tag) => {
+        const normalizedTag = removeVietnameseTones(tag); // Loại bỏ dấu
+        return tagColors[normalizedTag] || "#e91e63"; // Màu mặc định
+    };
+    
   return(
     <div className='featured-container'>
       <h2 className='featured-title'>Các dự án đã kết thúc</h2>
@@ -27,7 +56,12 @@ function FeaturedProjects(onSwitchToFeatured) {
                 <div key={charity.id} className="home-project-item">
                     <div className="home-project-container">
                         <img src={charity.image} alt={charity.title} className="project-image" />
-                        <p className="home-project-tag">{charity.tag}</p>
+                        <p
+                            className="home-project-tag"
+                            style={{ backgroundColor: getTagColor(charity.tag) }}
+                        >
+                            {charity.tag}
+                        </p>
                         {orgImage && <img src={orgImage} alt={charity.organization} className="home-org-logo" />}
                         <div className="home-project-content">
                             <p className="home-org">{charity.organization}</p>

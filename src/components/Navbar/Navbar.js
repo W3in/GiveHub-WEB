@@ -15,7 +15,7 @@ function Navbar() {
           <li className="dropdown">
             <Link to="#" className='navitem'>Các tổ chức</Link>
             <div className="dropdown-content">
-              <Link to="/about" className='navitem'>Giới thiệu</Link><br/>
+              <Link to="/about" className='navitem' style={{width: 90}}>Giới thiệu</Link><br/>
               <Link to="/project" className='navitem'>Dự án</Link>
             </div>
           </li>

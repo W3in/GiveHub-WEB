@@ -58,9 +58,10 @@
     margin-bottom: 8px;
     transition: color 0.3s ease;
   }
-  
-  .donate-title:hover {
-    color: #4caf50; /* Chuyển sang màu xanh khi hover */
+
+  h2.donate-title{
+    text-align: center;
+    font-size: 25px;
   }
   
   .donate-org {
@@ -81,6 +82,10 @@
     color: white;
   }
   
+  .donate-project-tag{
+    font-size: 20px;
+  }
+
   .donate-target {
     font-size: 14px;
     color: #555;
