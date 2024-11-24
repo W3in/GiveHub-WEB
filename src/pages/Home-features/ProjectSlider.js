@@ -23,7 +23,6 @@ const tagColors = {
     "tre-em": "#0aa886",
     "nguoi-gia-neo-don": "#5c4917",
     "hoan-canh-kho-khan": "#e64207",
-
 };
 
 // Hàm lấy màu cho tag
@@ -122,7 +121,7 @@ const ProjectSlider = ({ charities, getOrgImage }) => {
                                                     to={`/detail/${charity.id}`}
                                                     style={{ textDecoration: "none", color: "black" }}
                                                 >
-                                                    <h4 className="home-project-title">{charity.title}</h4>
+                                                    <h4 className="home-project-title"><span></span>{charity.title}</h4>
                                                 </Link>
                                                 <div className="progress-container">
                                                     <div
