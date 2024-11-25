@@ -73,8 +73,9 @@
     flex-direction: row;
     align-items: center;
     gap: 20px;
+    text-decoration: none;
+    color: black;
 }
-
 .project-info-content{
     background-color: #eee;
     padding: 20px;

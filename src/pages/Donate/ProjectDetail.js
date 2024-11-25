@@ -5,6 +5,7 @@ import "../../styles/Detail.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import DonateModal from './DonateModal';
+import { Link } from 'react-router-dom';
 
 
 const ProjectDetail = () => {
@@ -15,6 +16,11 @@ const ProjectDetail = () => {
     const organization = org.find((orgItem) => orgItem.organization === organizationName);
     return organization ? organization.image : null;
   };
+
+  const getOrgID = (organizationName) => {
+    const organization = org.find((orgItem) => orgItem.organization === organizationName);
+    return organization ? organization.id : null;
+  }
 
   const [isModalVisible, setModalVisible] = useState(false);
   const [selectedCharityTitle, setSelectedCharityTitle] = useState('');
@@ -54,7 +60,7 @@ const ProjectDetail = () => {
     const normalizedTag = removeVietnameseTones(tag); // Loại bỏ dấu
     return tagColors[normalizedTag] || "#e91e63"; // Màu mặc định
   };
-
+  const orgID = getOrgID(project.organization);
   const { title, image, organization, raisedAmount, targetAmount, tag, details, status } = project;
   const raised = parseInt(project.raisedAmount.replace(/[^0-9]/g, ""), 10);
   const target = parseInt(project.targetAmount.replace(/[^0-9]/g, ""), 10);
@@ -103,10 +109,19 @@ const ProjectDetail = () => {
               <h2 className="project-detail-title">{title}</h2>
               <div className='project-info-content'>
                 {organization && 
-                <div className="project-detail-organization">
-                  <img src={orgImage} alt={project.organization} className="detail-org-logo" />
-                  <span>{organization}</span>
-                </div>}
+                    <Link
+                        to={`/organization/${orgID}`} // Điều hướng đến trang chi tiết tổ chức
+                        className='project-detail-organization'
+                    >
+                            <img
+                                src={orgImage}
+                                alt={project.organization}
+                                className="detail-org-logo"
+                            />
+                            <span>{organization}</span>
+
+                    </Link>
+                }
                 {targetAmount && <p className="project-detail-target-amount"><strong>Mục tiêu:</strong> <span>{targetAmount}</span></p>}
                 <div className="progress-container">
                     <div
