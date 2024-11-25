@@ -1,17 +1,15 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../../styles/Stats.css";
 import data from "../../data/data.json";
 
 function Stats() {
-  // Số mục hiển thị mỗi trang
   const ITEMS_PER_PAGE_ORG = 10; // Số tổ chức trên mỗi trang
   const ITEMS_PER_PAGE_USER = 7; // Số user trên mỗi trang
 
-  // State cho trang hiện tại của tổ chức và người dùng
   const [currentOrgPage, setCurrentOrgPage] = useState(1);
   const [currentUserPage, setCurrentUserPage] = useState(1);
 
-  // Hàm để tính tổng số tiền quyên góp cho mỗi tổ chức
   const calculateRaisedAmount = (orgName) => {
     const relevantCharities = data.charities.filter(
       (charity) => charity.organization === orgName
@@ -37,7 +35,6 @@ function Stats() {
     return relevantCharities.filter((charity) => charity.status === 0).length;
   };
 
-  // Sắp xếp các tổ chức theo tổng số tiền quyên góp giảm dần
   const sortedOrgs = data.org
     .map((org) => ({
       ...org,
@@ -47,18 +44,15 @@ function Stats() {
     }))
     .sort((a, b) => b.totalRaised - a.totalRaised);
 
-  // Sắp xếp các người dùng theo tổng số tiền quyên góp giảm dần
   const sortedUsers = data.users.sort((a, b) => {
     const A = parseFloat(a.totalDonated.replace(/[^\d.-]/g, ""));
     const B = parseFloat(b.totalDonated.replace(/[^\d.-]/g, ""));
     return B - A;
   });
 
-  // Tính tổng số trang cho tổ chức và người dùng
   const totalOrgPages = Math.ceil(sortedOrgs.length / ITEMS_PER_PAGE_ORG);
   const totalUserPages = Math.ceil(sortedUsers.length / ITEMS_PER_PAGE_USER);
 
-  // Lấy dữ liệu theo trang hiện tại
   const orgsToDisplay = sortedOrgs.slice(
     (currentOrgPage - 1) * ITEMS_PER_PAGE_ORG,
     currentOrgPage * ITEMS_PER_PAGE_ORG
@@ -68,11 +62,9 @@ function Stats() {
     currentUserPage * ITEMS_PER_PAGE_USER
   );
 
-  // Hàm để thay đổi trang
   const handleOrgPageChange = (page) => setCurrentOrgPage(page);
   const handleUserPageChange = (page) => setCurrentUserPage(page);
 
-  // Hàm để hiển thị các nút phân trang
   const renderPagination = (currentPage, totalPages, onPageChange) => {
     const pages = [];
     for (let i = 1; i <= totalPages; i++) {
@@ -98,13 +90,16 @@ function Stats() {
           {orgsToDisplay.map((item, index) => {
             const totalRaisedAmount = item.totalRaised.toLocaleString();
             return (
-              <div key={item.organization} className="org_entry">
+              <Link
+                key={item.organization}
+                to={`/organization/${item.id}`} // Đường dẫn chi tiết
+                className="org_entry"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
                 <div className="avatar_wrapper">
                   {index === 0 && currentOrgPage === 1 && (
                     <img
-                      src={
-                        "https://img2.annthegran.com/printart/xlarge/maya_kreations/pgmks1168.webp"
-                      }
+                      src="https://img2.annthegran.com/printart/xlarge/maya_kreations/pgmks1168.webp"
                       alt="Crown"
                       className="crown_icon_org"
                     />
@@ -125,7 +120,7 @@ function Stats() {
                     Số dự án đang trong tiến hành: {item.inProgressProjects}
                   </p>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>
@@ -143,9 +138,7 @@ function Stats() {
               <div className="avatar_wrapper">
                 {index === 0 && currentUserPage === 1 && (
                   <img
-                    src={
-                      "https://img2.annthegran.com/printart/xlarge/maya_kreations/pgmks1168.webp"
-                    }
+                    src="https://img2.annthegran.com/printart/xlarge/maya_kreations/pgmks1168.webp"
                     alt="Crown"
                     className="crown_icon"
                   />
@@ -178,4 +171,4 @@ function Stats() {
   );
 }
 
-export default Stats
+export default Stats;

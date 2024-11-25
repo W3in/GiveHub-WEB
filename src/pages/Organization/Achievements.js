@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import data from '../../data/data.json';
 
-function Achievement() {
+function Achievement({ organizationName }) {
   const charities = data.charities;
   const org = data.org;
 
@@ -14,7 +14,7 @@ function Achievement() {
   const getOrgID = (organizationName) => {
     const organization = org.find((orgItem) => orgItem.organization === organizationName);
     return organization ? organization.id : null;
-  }
+  };
 
   const removeVietnameseTones = (str) => {
     return str
@@ -43,79 +43,84 @@ function Achievement() {
     return tagColors[normalizedTag] || "#e91e63"; // Màu mặc định
   };
 
+  // Lọc dự án theo tổ chức nếu organizationName được truyền
+  const filteredCharities = organizationName
+    ? charities.filter(
+        (charity) => charity.organization === organizationName && charity.status === 1
+      )
+    : charities.filter((charity) => charity.status === 1); // Hiển thị tất cả dự án đã kết thúc nếu không có tổ chức cụ thể
+
   return (
     <div className="featured-container">
       <h2 className="featured-title">Các dự án đã kết thúc</h2>
       <div className="featured-grid">
-        {charities
-          .filter((charity) => charity.status === 1) // Chỉ chọn các dự án đã kết thúc
-          .map((charity) => {
-            const orgImage = getOrgImage(charity.organization);
-            const orgID = getOrgID(charity.organization);
-            const raised = parseInt(charity.raisedAmount.replace(/[^0-9]/g, ''), 10);
-            const target = parseInt(charity.targetAmount.replace(/[^0-9]/g, ''), 10);
-            const progress = Math.min((raised / target) * 100, 100);
-            const roundedProgress = progress.toFixed(1);
+        {filteredCharities.map((charity) => {
+          const orgImage = getOrgImage(charity.organization);
+          const orgID = getOrgID(charity.organization);
+          const raised = parseInt(charity.raisedAmount.replace(/[^0-9]/g, ''), 10);
+          const target = parseInt(charity.targetAmount.replace(/[^0-9]/g, ''), 10);
+          const progress = Math.min((raised / target) * 100, 100);
+          const roundedProgress = progress.toFixed(1);
 
-            return (
-              <div key={charity.id} className="home-project-item">
-                <div className="home-project-container">
-                  <img
-                    src={charity.image}
-                    alt={charity.title}
-                    className="project-image"
-                  />
-                  <p
-                    className="home-project-tag"
-                    style={{ backgroundColor: getTagColor(charity.tag) }}
+          return (
+            <div key={charity.id} className="home-project-item">
+              <div className="home-project-container">
+                <img
+                  src={charity.image}
+                  alt={charity.title}
+                  className="project-image"
+                />
+                <p
+                  className="home-project-tag"
+                  style={{ backgroundColor: getTagColor(charity.tag) }}
+                >
+                  {charity.tag}
+                </p>
+                {orgImage && (
+                  <Link
+                    to={`/organization/${orgID}`} // Điều hướng đến trang chi tiết tổ chức
+                    style={{ textDecoration: "none", color: "black" }}
                   >
-                    {charity.tag}
-                  </p>
-                  {orgImage && (
-                    <Link
-                        to={`/organization/${orgID}`} // Điều hướng đến trang chi tiết tổ chức
-                        style={{ textDecoration: "none", color: "black" }}
-                    >
-                        <div className="home-org-logo-container">
-                            <img
-                                src={orgImage}
-                                alt={charity.organization}
-                                className="home-org-logo"
-                            />
-                        </div>
-                    </Link>
+                    <div className="home-org-logo-container">
+                      <img
+                        src={orgImage}
+                        alt={charity.organization}
+                        className="home-org-logo"
+                      />
+                    </div>
+                  </Link>
                 )}
-                  <div className="home-project-content">
+                <div className="home-project-content">
                   <p className="home-org">
-                      <Link
-                          to={`/organization/${orgID}`} // Điều hướng đến trang chi tiết tổ chức
-                          style={{ textDecoration: "none", color: "black" }}
-                      >
-                          {charity.organization}
-                      </Link>
-                  </p>
                     <Link
-                      to={`/detail/${charity.id}`} // Liên kết tới trang chi tiết của dự án
-                      style={{ textDecoration: 'none', color: 'black' }}
+                      to={`/organization/${orgID}`} // Điều hướng đến trang chi tiết tổ chức
+                      style={{ textDecoration: "none", color: "black" }}
                     >
-                      <h4 className="home-project-title">{charity.title}</h4>
+                      {charity.organization}
                     </Link>
-                    <div className="progress-container">
-                      <div
-                        className="progress-bar"
-                        style={{ width: `${progress}%` }}
-                      ></div>
-                    </div>
-                    <div className="progress-text">
-                      <p>{`${raised.toLocaleString()}đ`}</p>
-                      <p>{`${Math.round(roundedProgress)}%`}</p>
-                    </div>
-                    <p className="home-target">Mục tiêu: {charity.targetAmount}</p>
+                  </p>
+                  <Link
+                    to={`/detail/${charity.id}`} // Liên kết tới trang chi tiết của dự án
+                    style={{ textDecoration: 'none', color: 'black' }}
+                  >
+                    <h4 className="home-project-title">{charity.title}</h4>
+                  </Link>
+                  <div className="progress-container">
+                    <div
+                      className="progress-bar"
+                      style={{ width: `${progress}%` }}
+                    ></div>
                   </div>
+                  <div className="progress-text">
+                    <p>{`${raised.toLocaleString()}đ`}</p>
+                    <p>{`${Math.round(roundedProgress)}%`}</p>
+                  </div>
+                  <p className="home-target">Mục tiêu: {charity.targetAmount}</p>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
