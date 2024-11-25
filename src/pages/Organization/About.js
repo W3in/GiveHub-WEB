@@ -64,34 +64,77 @@ function About() {
           Các tổ chức gây quỹ tiêu biểu
         </h2>
         <div className='grid-container'>
-          <img src={p1} alt='p1' className='grid-image' />
-          <img src={p2} alt='p2' className='grid-image' />
-          <img src={p3} alt='p3' className='grid-image' />
-          <img src={p4} alt='p4' className='grid-image' />
-          <img src={p5} alt='p5' className='grid-image' />
-          <img src={p6} alt='p6' className='grid-image' />
-          <img src={p7} alt='p7' className='grid-image' />
-          <img src={p8} alt='p8' className='grid-image' />
-          <img src={p9} alt='p9' className='grid-image' />
-          <img src={p10} alt='p10' className='grid-image' />
-          <img src={p11} alt='p11' className='grid-image' />
-          <img src={p12} alt='p12' className='grid-image' />
-          <img src={p13} alt='p13' className='grid-image' />
-          <img src={p14} alt='p14' className='grid-image' />
-          <img src={p15} alt='p15' className='grid-image' />
-          <img src={p16} alt='p16' className='grid-image' />
-          <img src={p17} alt='p17' className='grid-image' />
-          <img src={p18} alt='p18' className='grid-image' />
-          <img src={p19} alt='p19' className='grid-image' />
-          <img src={p20} alt='p20' className='grid-image' />
-          <img src={p21} alt='p21' className='grid-image' />
-          <img src={p22} alt='p22' className='grid-image' />
-          <img src={p23} alt='p23' className='grid-image' />
-
+          <Link to='/organization/100'>
+            <img src={p1} alt='p1' className='grid-image' />
+          </Link>
+          <Link to='/organization/101'>
+            <img src={p2} alt='p2' className='grid-image' />
+          </Link>
+          <Link to='/organization/102'>
+            <img src={p3} alt='p3' className='grid-image' />
+          </Link>
+          <Link to='/organization/103'>
+            <img src={p4} alt='p4' className='grid-image' />
+          </Link>
+          <Link to='/organization/104'>
+            <img src={p5} alt='p5' className='grid-image' />
+          </Link>
+          <Link to='/organization/105'>
+            <img src={p6} alt='p6' className='grid-image' />
+          </Link>
+          <Link to='/organization/106'>
+            <img src={p7} alt='p7' className='grid-image' />
+          </Link>
+          <Link to='/organization/107'>
+            <img src={p8} alt='p8' className='grid-image' />
+          </Link>
+          <Link to='/organization/108'>
+            <img src={p9} alt='p9' className='grid-image' />
+          </Link>
+          <Link to='/organization/109'>
+            <img src={p10} alt='p10' className='grid-image' />
+          </Link>
+          <Link to='/organization/110'>
+            <img src={p11} alt='p11' className='grid-image' />
+          </Link>
+          <Link to='/organization/111'>
+            <img src={p12} alt='p12' className='grid-image' />
+          </Link>
+          <Link to='/organization/112'>
+            <img src={p13} alt='p13' className='grid-image' />
+          </Link>
+          <Link to='/organization/113'>
+            <img src={p14} alt='p14' className='grid-image' />
+          </Link>
+          <Link to='/organization/114'>
+            <img src={p15} alt='p15' className='grid-image' />
+          </Link>
+          <Link to='/organization/115'>
+            <img src={p16} alt='p16' className='grid-image' />
+          </Link>
+          <Link to='/organization/116'>
+            <img src={p17} alt='p17' className='grid-image' />
+          </Link>
+          <Link to='/organization/117'>
+            <img src={p18} alt='p18' className='grid-image' />
+          </Link>
+          <Link to='/organization/118'>
+            <img src={p19} alt='p19' className='grid-image' />
+          </Link>
+          <Link to='/organization/119'>
+            <img src={p20} alt='p20' className='grid-image' />
+          </Link>
+          <Link to='/organization/120'>
+            <img src={p21} alt='p21' className='grid-image' />
+          </Link>
+          <Link to='/organization/121'>
+            <img src={p22} alt='p22' className='grid-image' />
+          </Link>
+          <Link to='/organization/122'>
+            <img src={p23} alt='p23' className='grid-image' />
+          </Link>
         </div>
-
       </div>
-
       <div className='about-container bg-white'>
         <h1>
           Đồng hành trên Ứng dụng Viettel Money
@@ -103,7 +146,6 @@ function About() {
         <h1 className='mt-5'>
           Báo chí nói về GiveHub
         </h1>
-        {/* Thêm anchor nếu cần */}
         <div>
           <img src={n1} alt='n1' className='flex-image' />
           <img src={n2} alt='n2' className='flex-image' />

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
 import data from '../../data/data.json';
 import "../../styles/Detail.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import DonateModal from './DonateModal';
+
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -13,6 +15,15 @@ const ProjectDetail = () => {
     const organization = org.find((orgItem) => orgItem.organization === organizationName);
     return organization ? organization.image : null;
   };
+
+  const [isModalVisible, setModalVisible] = useState(false);
+  const [selectedCharityTitle, setSelectedCharityTitle] = useState('');
+  const openModal = (title) => {
+    setSelectedCharityTitle(title);
+    setModalVisible(true);
+  };
+    const closeModal = () => setModalVisible(false);
+
 
   if (!project) {
     return <p>Dự án không tồn tại.</p>;
@@ -54,8 +65,10 @@ const ProjectDetail = () => {
     if (status === 0) {
       return (
         <>
-          <button className='donate-button'>Ủng hộ trực tuyến</button>
-          <button className='donate-button'>Ủng hộ trực tiếp</button>
+          <button className='donate-button' 
+                    onClick={() => openModal(project.title)}>
+                      Ủng hộ ngay
+          </button>
         </>
       );
     } else if (status === 1) {
@@ -140,6 +153,7 @@ const ProjectDetail = () => {
           </a>
         </div>
       </div>
+      <DonateModal isVisible={isModalVisible} onClose={closeModal} charityTitle={selectedCharityTitle}/>
     </div>
   );
 };

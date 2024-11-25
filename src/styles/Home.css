@@ -309,6 +309,10 @@
     margin: 38% 15px 0 15px;
 }
 
+.home-org-logo:hover{
+    transform: scale(1.05);
+}
+
 .home-org{
     font-size: 12px;
     margin: 0;
@@ -331,6 +335,7 @@
     position: absolute;
     top: 900px;
     left: 7.5%;
+    z-index: -1;
 }
 
 .slider-prev, .slider-next {
