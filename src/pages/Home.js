@@ -15,6 +15,7 @@ import s5 from "../images/supporter/s5.png";
 import intro from "../images/content/Home/introduce.jpg";
 import data from "../data/data.json";
 import ProjectSlider from "./Home-features/ProjectSlider";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -119,8 +120,12 @@ const Home = () => {
                         GiveHub được tin dùng bởi các tổ chức uy tín như: Hội chữ thập đỏ Việt Nam, Quỹ Bảo Trợ Trẻ Em Việt Nam, Quỹ Hy vọng, Quỹ Vì Tầm Vóc Việt, Quỹ Trò nghèo vùng cao, Quỹ từ thiện Nâng bước tuổi thơ và nhiều tổ chức khác.<br /><br />
                         GiveHub được hỗ trợ công nghệ bởi FPT Smart Cloud, Comartek, Viettel Money và VNPay, đảm bảo ứng dụng hoạt động ổn định, phương thức thanh toán đa dạng và an toàn.
                     </p>
+                    <Link to={"/about"} className="home-more">
+                        Xem thêm...
+                    </Link>
                 </div>
             </div>
+            
             <div className="supporter">
                 <h1>Đơn vị đồng hành</h1>
                 <div className="img-container">
