@@ -295,6 +295,7 @@
     text-overflow: ellipsis;
     height: 38.67px;
     margin: 5px 0;
+    z-index: 1000;
 }
 
 .home-project-title:hover{
@@ -336,6 +337,11 @@
     position: absolute;
     top: 900px;
     left: 7.5%;
+    z-index: 20;
+}
+
+.slick-slider{
+    z-index: 50;
 }
 
 .slider-prev, .slider-next {

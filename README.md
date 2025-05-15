@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# 🌍 GiveHub – Giao diện Web Tổ chức Từ Thiện bằng ReactJS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**GiveHub** là một dự án giao diện web cho một tổ chức từ thiện, được xây dựng bằng **ReactJS** và **CSS**.  
+Mục tiêu của GiveHub là tạo ra một nền tảng thân thiện, hiện đại và dễ sử dụng cho các tổ chức thiện nguyện nhằm kết nối với cộng đồng, chia sẻ thông tin, tiếp nhận quyên góp và quảng bá các hoạt động xã hội.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🎯 Chức năng chính
 
-### `npm start`
+- 🏠 **Trang chủ**: Giới thiệu tổ chức, mục tiêu và các hoạt động nổi bật
+- 📢 **Các tổ chức**: Danh sách các hoạt động đang diễn ra hoặc sắp tới
+- 📈 **Thống kê**: Danh sách tổ chức/cá nhân đã quyên góp cho các chiến dịch
+- 💝 **Quyên góp**: Giao diện kêu gọi hỗ trợ tài chính hoặc hiện vật
+- 📞 **Liên hệ**: Form liên hệ và thông tin mạng xã hội
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Công nghệ sử dụng
 
-### `npm test`
+- ⚛️ [React.js](https://reactjs.org/) – Thư viện xây dựng giao diện người dùng
+- 🎨 CSS3 – Tuỳ chỉnh giao diện thủ công, không dùng framework UI
+- 📦 [Create React App](https://create-react-app.dev/) – Bộ khởi tạo dự án React tiêu chuẩn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🚀 Hướng dẫn cài đặt
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/Solarnenene147/IE104.git
+cd IE104
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Cài đặt dependencies
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 3. Chạy dự án ở môi trường phát triển
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Truy cập [http://localhost:3000](http://localhost:3000) để xem trang web trong trình duyệt.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 📁 Cấu trúc thư mục (rút gọn)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+IE104/
+├── public/
+│   ├── favicon.png
+│   └── index.html
+├── src/
+│   ├── images/           # Hình ảnh và tài nguyên
+│   ├── components/       # Các thành phần React (Header, Footer, Card, v.v.)
+│   ├── pages/            # Trang (Home, About, Donate, Contact, v.v.)
+│   ├── App.js            # Điểm khởi đầu của ứng dụng
+│   └── index.js          # Điểm vào ReactDOM
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🔮 Hướng phát triển tiếp theo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- 🌐 Kết nối với backend thực tế (Firebase, Supabase hoặc Node.js)
+- 💳 Tích hợp hệ thống thanh toán (VNPay, Momo, PayPal…)
+- 🌙 Dark Mode / Accessibility (WCAG)
+- 🌏 Hỗ trợ đa ngôn ngữ
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 👥 Thành viên nhóm
 
-### Making a Progressive Web App
+- 👨‍💼 **Huỳnh Minh Phước** – Trưởng nhóm, phát triển chính giao diện React
+- 👨‍💻 **Dương Hồng Minh** – Thiết kế Trang Thống kê, quản lý dữ liệu tĩnh
+- 👨‍💻 **Nguyễn Cương Lĩnh** – Xây dựng các component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> 🌟 _GiveHub – Tình nguyện là món quà vô giá mà bạn có thể trao đi._

@@ -1,7 +1,7 @@
 // src/components/Layout.js
 import React, {useEffect, useState} from 'react';
-import Navbar from './Navbar/Navbar'; // Đảm bảo đường dẫn đúng
-import Footer from './Footer'; // Nếu có footer riêng
+import Navbar from './Navbar/Navbar'; 
+import Footer from './Footer';
 import logo from '../images/features/mess.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
@@ -25,14 +25,14 @@ function Layout({ children }) {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // Cuộn mượt
+      behavior: 'smooth', 
     });
   };
 
   return (
     <div className="layout">
       <Navbar />
-        <div className="content">{children}</div>
+        <div className="content" style={{marginTop: 72}}>{children}</div>
         <a href='https://m.me/hmfuocc' className='mess'><img src={logo} alt='messenger' /></a>
         <div>
           {isVisible && (

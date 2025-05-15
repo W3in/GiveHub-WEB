@@ -137,7 +137,7 @@ const ProjectSlider = ({ charities, getOrgImage, getOrgID }) => {
                                                     style={{ textDecoration: "none", color: "black" }}
                                                 >
                                                     <h4 className="home-project-title">
-                                                        <span></span>{charity.title}
+                                                        <span>{charity.title}</span>
                                                     </h4>
                                                 </Link>
                                                 <div className="progress-container">

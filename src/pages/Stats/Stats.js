@@ -82,6 +82,7 @@ function Stats() {
   };
 
   return (
+    
     <div className="stats_page">
       {/* Xếp hạng tổ chức */}
       <div className="organization_ranking">

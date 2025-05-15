@@ -146,8 +146,11 @@ const ProjectDetail = () => {
                 {detail.type === 'foottext' && detail.content && detail.content !== "" && (
                   <small className="project-detail-foottext">*{detail.content}</small>
                 )}
-                {detail.url && detail.url !== "" && (
+                {detail.url && detail.url !== "" && detail.type === 'image' && (
                   <img src={detail.url} className="project-detail-img" alt={detail.caption}/>
+                )}
+                {detail.url && detail.url !== "" && detail.type === 'video' && (
+                  <video src={detail.url} className="project-detail-img" alt={detail.caption}/>
                 )}
                 {detail.caption && detail.caption !== "" && (
                   <p className="project-detail-caption">{detail.caption}</p>
