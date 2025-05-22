@@ -28,8 +28,8 @@ Mục tiêu của GiveHub là tạo ra một nền tảng thân thiện, hiện 
 ### 1. Clone repository
 
 ```bash
-git clone https://github.com/Solarnenene147/IE104.git
-cd IE104
+git clone https://github.com/Solarnenene147/GiveHub-WEB.git
+cd GiveHub-WEB
 ```
 
 ### 2. Cài đặt dependencies
